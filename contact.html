@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="future tips,futuretips,intraday tips,profit sharing tips,profit sharing calls,stock market tips india,share market tips india,pay per tips,pay for profit,stock future tips india,future trading calls,stock future advisory,paid stock future calls,F&O tips,share tips,stock market advisory,future calls" />
+
+        <title>Future Tips - Positional stock future tips with high accuracy</title>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <!--[if IE 6]>
+            <link rel="stylesheet" type="text/css" href="css/ie6.css" />
+        <![endif]-->
+
+		<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+
+		<style type="text/css">
+			input[type="text"] { width: 200px; }
+			textarea { width: 200px; height: 70px; }
+		</style>
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-25887728-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+            function validate_numbers(e) {
+                var charCode = e.which || event.keyCode;
+                if (charCode > 31 && (charCode < 48 || charCode > 57))
+                    return false;
+            }
+
+            function validate_form() {
+                var name_obj     = document.getElementById('name');
+                var mobile_obj   = document.getElementById('mobile');
+                var email_obj    = document.getElementById('email');
+				var subject_obj  = document.getElementById('subject');
+				var message_obj  = document.getElementById('message');
+
+                var name_val     = name_obj.value;
+                var mobile_val   = mobile_obj.value;
+                var email_val  	 = email_obj.value;
+				var subject_val  = subject_obj.value;
+				var message_val  = message_obj.value;
+
+                if (name_val == null || name_val == '') {
+                    alert('Please enter Name');
+                    name_obj.focus();
+                    return;
+                }
+                else if ((mobile_val == null || mobile_val == '') && (email_val == null || email_val == '')) {
+                    alert('Please enter either Mobile No or Email ID');
+                    if (mobile_val == null || mobile_val == '') mobile_obj.focus();
+                    return;
+                }
+                else {
+                    var mobile_reg = /^([0-9\-]{10,})$/;
+                    var email_reg  = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+                    if (mobile_val && mobile_reg.test(mobile_val) == false) {
+                        alert('Please enter valid Mobile No');
+                        mobile_obj.focus();
+                        return;
+                    }
+                    else if (email_val && email_reg.test(email_val) == false) {
+                        alert('Please enter valid Email No');
+                        email_obj.focus();
+                        return;
+                    }
+					else if (subject_val == null || subject_val == '') {
+						alert('Please enter Subject');
+						subject_obj.focus();
+						return;
+					}
+					else if (message_val == null || message_val == '') {
+						alert('Please enter Message');
+						message_obj.focus();
+						return;
+					}
+                }
+
+                $('#ajax_loader').html('<img src="images/ajax-loader.gif" />');
+                var jqxhr = $.post('./cgi-bin/contact.cgi',
+                    {"name": name_val, "mobile": mobile_val, "email": email_val, "subject": subject_val, "message": message_val},
+                    function(data) {
+                        $('#ajax_loader').html(data);
+                    }
+                ).error(function(xhr) {
+                    $('#ajax_loader').html('<font color="red">An error occured. Please try later.</font>');
+                });
+            }
+        </script>
+
+    </head>
+
+    <body>
+
+        <!--wrapper-->
+        <div class="wrapper">
+
+            <!--header-->
+            <div class="tophd_bg"></div>
+            <div class="yellow_bg">
+
+                <!--logo link-->
+                <div class="logo_wrapper">
+                   <div class="logo"><img src="images/logo.jpg" /></div>
+                   <div class="link-x"><a class="link" href="index.html">Home</a></div>
+                   <div class="sep"><img src="images/sep.jpg" /></div>
+                   <div class="link-x"><a class="link" href="about.html">About Us</a></div>
+                   <div class="sep"><img src="images/sep.jpg" /></div>
+                   <div class="link-x"><a class="link" href="services.html">Services</a></div>
+                   <div class="sep"><img src="images/sep.jpg" /></div>
+                   <div class=" link-x"><a class="link" href="performance.html">Performance</a></div>
+                   <div class="sep"><img src="images/sep.jpg" /></div>
+                   <div class="link-x"><a class="link" href="payment.html">Payment</a></div>
+                   <div class="sep"><img src="images/sep.jpg" /></div>
+                   <div class="link-x"><a class="link" href="contact.html">Contact Us</a></div>
+                </div>
+                <!--logo link end-->
+
+                <!--banner-->
+                <div class="banner"><img src="images/banner.jpg" /></div>
+                <!--banner end-->
+
+            </div>
+            <!--header end-->
+
+            <!--banner Btmbg-->
+            <div class="tophd_bg"></div>
+            <!--banner Btmbg end-->
+
+			<!--content head-->
+			<div class="cont-head">Contact Us</div>
+			<!--content head end-->
+
+			<!--content text -->
+			<div class="cont-text">
+				<div style="float: left; width: 500px;">
+					<form name="contact" action="contact.cgi" method="post">
+						<p><span class="payment_det">Name</span><input type="text" name="name" id="name" /></p>
+						<p><span class="payment_det">Mobile</span><input type="text" name="mobile" id="mobile" onkeypress="return validate_numbers(event);" /></p>
+						<p><span class="payment_det">Email</span><input type="text" name="email" id="email" /></p>
+						<p><span class="payment_det">Subject</span><input type="text" name="subject" id="subject" /></p>
+						<p><span class="payment_det">Message</span><textarea name="message" id="message"></textarea></p>
+						<p>
+							<span id="ajax_loader" class="payment_det" style="padding-top: 5px; text-align: center;">&nbsp;</span>
+							<input type="button" value="Submit" onclick="validate_form();" />&nbsp;&nbsp;&nbsp;
+							<input type="reset" value="Reset" />
+						</p>
+					</form>
+				</div>
+				<div style="float: left; width: 410px; font-weight: bold;">
+					<p><span class="payment_det">Contact Number</span>09745011355</p>
+					<p><span class="payment_det">Contact Email</span><a href="mailto:futuretips4u@yahoo.com">futuretips4u@yahoo.com</a></p>
+				</div>
+			</div>
+			<!--content text end -->
+
+            <!--footer-->
+            <div class="footer_wrap">
+                <div class="footer-one">
+                    <div class="footer-left">Futuretips &copy; 2011. All Rights Reserved.</div>
+                    <div class="footer-right">
+                        <a class="link-ftr" href="disclaimer.html">Disclaimer</a> |
+                        <a class="link-ftr" href="terms.html">Terms & Conditions</a> |
+                        <a class="link-ftr" href="policy.html">Privacy Policy</a>
+                    </div>
+                </div>
+
+                <div class="footer-link">
+                    <a class="link-footer" href="index.html">Home</a>
+                    &nbsp;|&nbsp;
+                    <a class="link-footer" href="about.html">About Us</a>
+                    &nbsp;|&nbsp;
+                    <a class="link-footer" href="services.html">Services</a>
+                    &nbsp;|&nbsp;
+                    <a class="link-footer" href="performance.html">Performance</a>
+                    &nbsp;|&nbsp;
+                    <a class="link-footer" href="payment.html">Payment</a>
+                    &nbsp;|&nbsp;
+                    <a class="link-footer" href="contact.html">Contact Us</a>
+                </div>
+            </div>
+            <!--footer end-->
+
+        </div>
+        <!--wrapper end-->
+
+    </body>
+</html>
